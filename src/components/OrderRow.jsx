@@ -29,7 +29,7 @@ const OrderRow = ({ data }) => {
                     {data?.customer_address}
                 </td>
                 <td className="px-6 py-4">
-                    {data?.total}
+                    {data?.status} <br /> {data?.total}
                 </td>
             </tr>
             {/* <ProductModal

@@ -40,15 +40,14 @@ const OrderTable = () => {
                                 Address
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                Total
+                                Status / Total
                             </th>
                         </tr>
                     </thead>
                     <tbody>
                         {orders?.map((order) => {
-                            console.log(order);
                             return (
-                                < OrderRow
+                                <OrderRow
                                     key={order?.channel_order_id}
                                     data={order}
                                 />
