@@ -4,6 +4,7 @@ import axios from "axios";
 import { Toaster, toast } from 'sonner';
 
 const OrderRow = ({ data }) => {
+    console.log(data)
     const [showModal, SetShowModal] = useState({ show: false, update: false, data: undefined })
 
     const [dropdown, setDropdown] = useState(false)
@@ -23,7 +24,7 @@ const OrderRow = ({ data }) => {
                     {data?.customer_alternate_phone === "" ? "NA" : data?.customer_alternate_phone}
                 </td>
                 <td className="px-6 py-4">
-                    {data?.products?.length}
+                    {data?.created_at}
                 </td>
                 <td className="px-6 py-4">
                     {data?.customer_address}

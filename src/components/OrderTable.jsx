@@ -5,17 +5,11 @@ import { useProductContext } from "@/context/ProductContext";
 import ProductRow from "@/components/ProductComponents/ProductRow";
 import axios from "axios";
 import OrderRow from "./OrderRow";
+import { useOrderContext } from "@/context/OrderContext";
 
 const OrderTable = () => {
 
-    const [orders, setOrders] = useState([])
-    useEffect(() => {
-        axios(`${process.env.NEXT_PUBLIC_BASE_URL}/order/orders`)
-            .then((res) => {
-                console.log(res.data)
-                setOrders(res.data.data)
-            })
-    }, [])
+    const { orders } = useOrderContext()
     const [showModal, SetShowModal] = useState({ show: false, update: false, data: undefined })
 
     return (
@@ -34,7 +28,7 @@ const OrderTable = () => {
                                 Phone Number
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                No. Of Items
+                                Date
                             </th>
                             <th scope="col" class="px-6 py-3">
                                 Address
@@ -52,7 +46,6 @@ const OrderTable = () => {
                                     data={order}
                                 />
                             )
-
                         })}
                     </tbody>
                 </table>
