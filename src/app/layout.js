@@ -9,6 +9,7 @@ import Head from 'next/head'
 
 
 import Sidebar from '@/components/LayoutComponents/Sidebar'
+import { OrderContextProvider } from '@/context/OrderContext'
 const inter = Inter({ subsets: ['latin'] })
 
 
@@ -29,11 +30,13 @@ export default function RootLayout({ children }) {
       />
       <body className={inter.className}>
         <AuthProvider>
-          <CategoryProvider>
-            <ProductProvider>
-              {children}
-            </ProductProvider>
-          </CategoryProvider>
+          <OrderContextProvider>
+            <CategoryProvider>
+              <ProductProvider>
+                {children}
+              </ProductProvider>
+            </CategoryProvider>
+          </OrderContextProvider>
         </AuthProvider>
       </body>
     </html>

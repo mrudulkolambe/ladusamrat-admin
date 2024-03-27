@@ -15,9 +15,8 @@ const Login = () => {
         })
             .then((res) => {
                 // setUserData(res.data)
-                console.log(res.data)
                 localStorage.setItem("token", res.data.response);
-                // setAdminToken(localStorage.getItem("token"))
+                window.location.reload()
             })
             .catch((error) => {
                 console.log(error)
