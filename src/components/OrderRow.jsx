@@ -11,11 +11,11 @@ const OrderRow = ({ data }) => {
     return (
         <>
             <Toaster />
-            <tr key={data?.channel_order_id} class="bg-white border-b  ">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
+            <tr key={data?.channel_order_id} className="bg-white border-b  ">
+                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
                     {data?.customer_name}
                 </th>
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
+                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
                     {data?.customer_email}
                 </th>
                 <td className="px-6 py-4 whitespace-nowrap text-ellipsis">

@@ -68,7 +68,7 @@ const CategoryModal = ({ showModal, SetShowModal, }) => {
                     </div>
                     <div className="w-1/2 flex justify-end">
                         <div onClick={() => SetShowModal({ show: false, update: false, data: undefined })} className="flex items-center justify-center p-3 shadow-md rounded-full h-12 w-12 text-center mr-4 text-lg text-black bg-white">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-x"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
                         </div>
                     </div>
                 </div>
@@ -76,7 +76,7 @@ const CategoryModal = ({ showModal, SetShowModal, }) => {
                     <div className="pr-4">
                         <div className="grid grid-cols-2 py-5">
                             <div className="w-full flex justify-center items-center">
-                                <label class="block w-1/2 items-center text-gray-800   font-medium text-sm">Category Name</label>
+                                <label className="block w-1/2 items-center text-gray-800   font-medium text-sm">Category Name</label>
                             </div>
                             <div className="w-full">
                                 <input type="text"
@@ -84,7 +84,7 @@ const CategoryModal = ({ showModal, SetShowModal, }) => {
                                     id="category"
                                     name="category_name"
                                     value={data?.category_name}
-                                    class="w-full mr-4 bg-gray-50  text-gray-900 text-sm rounded-lg block  p-4 border-2 "
+                                    className="w-full mr-4 bg-gray-50  text-gray-900 text-sm rounded-lg block  p-4 border-2 "
                                     placeholder="Category Name"
                                     required />
 
@@ -96,7 +96,7 @@ const CategoryModal = ({ showModal, SetShowModal, }) => {
                             <button onClick={() => SetShowModal({ show: false, update: false, data: undefined })} type="button" className="w-full flex align-middle items-center  focus:outline-none text-red-700 justify-center focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-28 py-5 me-2 mb-2 border"> Close</button>
                         </div>
                         <div className="w-1/2 flex justify-end">
-                            <button type="submit" class=" w-full flex align-middle items-center justify-center  focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-28 py-5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"> {showModal.update ? "Edit Category" : "Add Category"}</button>
+                            <button type="submit" className=" w-full flex align-middle items-center justify-center  focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-28 py-5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"> {showModal.update ? "Edit Category" : "Add Category"}</button>
                         </div>
                     </div>
                 </form>

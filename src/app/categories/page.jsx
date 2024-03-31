@@ -16,8 +16,7 @@ const Categories = ({ buttonTitle, SetShowModal }) => {
             {adminToken ?
                 <Layout >
                     <div className='px-10'>
-                        <h1 className="my-6 text-2xl font-bold text-gray-700">Catgory</h1>
-                       
+                        <h1 className="my-6 text-2xl font-bold text-gray-700">Category</h1>
                         <CategoriesTable />
                         <AddCategory showModal={showCategoryModal} SetShowModal={setShowCategoryModal} />
                     </div>

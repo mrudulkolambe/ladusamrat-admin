@@ -6,7 +6,6 @@ const Home = () => {
         <Layout display={true}>
             <div className='px-10'>
                 <h1 className="my-6 text-2xl font-bold text-gray-700">Orders</h1>
-                <Filter />
                 <OrderTable />
             </div>
         </Layout>

@@ -21,7 +21,6 @@ const ProductModal = ({ showModal, SetShowModal }) => {
             setImage(showModal?.data?.image)
         }
     }, [showModal])
-    console.log("Your Data", data)
     const onHandleSubmit = (e) => {
         const headers = {
             'authorization': `Bearer ${adminToken.adminToken}`
@@ -65,7 +64,7 @@ const ProductModal = ({ showModal, SetShowModal }) => {
                     </div>
                     <div className="w-1/2 flex justify-end">
                         <div onClick={() => SetShowModal({ show: false, update: false, data: undefined })} className="flex items-center justify-center p-3 shadow-md rounded-full h-12 w-12 text-center mr-4 text-lg text-black bg-white">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-x"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
                         </div>
                     </div>
                 </div>
@@ -74,36 +73,36 @@ const ProductModal = ({ showModal, SetShowModal }) => {
                     <div className="pr-4">
                     <div className="grid grid-cols-2 py-3">
                             <div className="w-full flex justify-center items-center">
-                                <label class="block w-1/2 items-center text-gray-800   font-medium text-sm">Product Image</label>
+                                <label className="block w-1/2 items-center text-gray-800   font-medium text-sm">Product Image</label>
                             </div>
                             <div className="w-full">
-                                <div class="flex items-center justify-center w-full">
+                                <div className="flex items-center justify-center w-full">
                                     <UploadComponent onChangeData={onChangeData} image={image} setImage={setImage} />
                                 </div>
                             </div>
                         </div>
                         <div className="grid grid-cols-2 py-3">
                             <div className="w-full flex justify-center items-center">
-                                <label class="block w-1/2 items-center text-gray-800   font-medium text-sm">Product Name</label>
+                                <label className="block w-1/2 items-center text-gray-800   font-medium text-sm">Product Name</label>
                             </div>
                             <div className="w-full">
-                                <input type="text" value={data?.name} name="name" onChange={onChangeData} class="w-full mr-4 bg-gray-50  text-gray-900 text-sm rounded-lg block  p-4 border-2 " placeholder="Product Name" required />
+                                <input type="text" value={data?.name} name="name" onChange={onChangeData} className="w-full mr-4 bg-gray-50  text-gray-900 text-sm rounded-lg block  p-4 border-2 " placeholder="Product Name" required />
                             </div>
                         </div>
                         <div className="grid grid-cols-2 py-3">
                             <div className="w-full flex justify-center items-center">
-                                <label class="block w-1/2 items-center text-gray-800   font-medium text-sm">Product Price</label>
+                                <label className="block w-1/2 items-center text-gray-800   font-medium text-sm">Product Price</label>
                             </div>
                             <div className="w-full">
-                                <input type="text" value={data?.price} name="price" onChange={onChangeData} class="w-full mr-4 bg-gray-50  text-gray-900 text-sm rounded-lg block  p-4 border-2 " placeholder="Product Price" required />
+                                <input type="text" value={data?.price} name="price" onChange={onChangeData} className="w-full mr-4 bg-gray-50  text-gray-900 text-sm rounded-lg block  p-4 border-2 " placeholder="Product Price" required />
                             </div>
                         </div>
                         <div className="grid grid-cols-2 py-3">
                             <div className="w-full flex justify-center items-center">
-                                <label class="block w-1/2 items-center text-gray-800   font-medium text-sm">Select Category</label>
+                                <label className="block w-1/2 items-center text-gray-800   font-medium text-sm">Select Category</label>
                             </div>
                             <div className="w-full">
-                                <select id="countries" name="category" onChange={onChangeData} class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-4">
+                                <select value={data?.category?._id} id="countries" name="category" onChange={onChangeData} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-4">
                                     <option value={""}>{showModal.update ? "Update Category" : "Add Category"}</option>
                                     {categories?.map((category) => {
                                         return (
@@ -116,10 +115,10 @@ const ProductModal = ({ showModal, SetShowModal }) => {
                         </div>
                         <div className="grid grid-cols-2 py-3">
                             <div className="w-full flex justify-center">
-                                <label class="block w-1/2 items-center text-gray-800 mt-2 font-medium text-sm">Product Description</label>
+                                <label className="block w-1/2 items-center text-gray-800 mt-2 font-medium text-sm">Product Description</label>
                             </div>
                             <div className="w-full">
-                                <textarea type="text" value={data?.description} name="description" onChange={onChangeData} class="w-full mr-4 bg-gray-50  text-gray-900 text-sm rounded-lg block  p-4 border-2 h-32 outline-none" placeholder="Product Description" required ></textarea>
+                                <textarea type="text" value={data?.description} name="description" onChange={onChangeData} className="w-full mr-4 bg-gray-50  text-gray-900 text-sm rounded-lg block  p-4 border-2 h-32 outline-none" placeholder="Product Description" required ></textarea>
                             </div>
                         </div>
 
@@ -129,7 +128,7 @@ const ProductModal = ({ showModal, SetShowModal }) => {
                             <button onClick={() => SetShowModal({ show: false, update: false, data: undefined })} type="button" className="w-full flex align-middle items-center  focus:outline-none text-red-700 justify-center focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-28 py-5 me-2 mb-2 border"> Close</button>
                         </div>
                         <div className="w-1/2 flex justify-end">
-                            <button type="submit" class=" w-full flex align-middle items-center justify-center  focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-28 py-5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"> {showModal.update ? "Edit Product" : "Add Product"}</button>
+                            <button type="submit" className=" w-full flex align-middle items-center justify-center  focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-28 py-5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"> {showModal.update ? "Edit Product" : "Add Product"}</button>
                         </div>
                     </div>
                 </form>
