@@ -26,7 +26,6 @@ const ProductModal = ({ showModal, SetShowModal }) => {
             'authorization': `Bearer ${adminToken.adminToken}`
         }
         e.preventDefault();
-        console.log(data)
         if (showModal?.update) {
             axios.patch(`${process.env.NEXT_PUBLIC_BASE_URL}/product/edit`, { ...data, image: image }, { headers: headers })
                 .then((res) => {
