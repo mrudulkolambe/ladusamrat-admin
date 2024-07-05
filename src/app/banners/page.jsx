@@ -75,8 +75,8 @@ const Banners = ({ }) => {
 						<h1 className="my-6 text-2xl font-bold text-gray-700">Banners</h1>
 						<div className="relative overflow-x-auto rounded-lg shadow-1xl grid grid-cols-5">
 							{
-								banners?.map((banner) => {
-									return <div className="relative w-max">
+								banners?.map((banner, index) => {
+									return <div key={index} className="relative w-max">
 										<img className="rounded-lg h-40 w-40 object-cover" src={banner.mediaURL} alt="" />
 										<div className="mt-2 flex items-center justify-between">
 											<button type="button" onClick={() => updateBanner(banner._id, !banner.active)} className={"px-3 py-2 rounded-lg bg-green-300 text-sm"}>{banner.active ? "Inactive" : "Active"}</button>
